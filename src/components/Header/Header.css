@@ -1,0 +1,128 @@
+.top-header {
+    background: #f4f4f4;
+    padding: 15px 0;
+}
+
+.top-header__breadcrum ul {
+    margin-bottom: 0px;
+}
+
+.top-header__breadcrum ul li {
+    display: inline-block;
+    margin-right: 30px;
+    color: #999;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 400;    
+}
+
+.top-header__breadcrum ul li a {
+    text-decoration: none;
+    color: #999;
+}
+
+.top-header__breadcrum ul li:hover  {
+    display: inline-block;
+    margin-right: 30px;
+    color: #999;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 400;
+    animation: greaterthen 1s infinite;     
+}
+
+.fa-angle-right {
+    font-weight: 100;
+    font-size: 8px;
+    margin-right: 10px;
+}
+
+.fa-angle-right:hover {
+    animation: greaterthen 1s infinite;    
+}
+
+@keyframes greaterthen {
+    from { transform: translateX(0px); }
+    to { transform: translateX(10px); }
+}
+
+.top-header__social ul {
+    margin-bottom: 0px;
+}
+
+.top-header__social ul li {
+    float: right;
+}
+
+.top-header__social ul li a {
+    display: block;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    margin: 0 1px;
+    text-align: center;
+    line-height: 28px;
+    transition: .2s;
+    color: #333;
+}
+
+.top-header__social ul li a:hover {
+    background: royalblue;
+    color: #FFF;
+}
+
+.header-logo {
+    padding: 25px 0;
+}
+
+.logo-info {
+    display: flex;
+    justify-content: end;
+    font-size: 14px;
+}
+
+.logo-info ul {
+    margin-bottom: 0px;
+}
+
+.logo-info ul li:nth-child(1){
+    font-weight: 400;
+    color: #999;
+}
+
+.logo-info ul li:nth-child(2){
+    font-weight: 700;
+    color: #333;
+}
+
+.header {
+    background: #08c;
+    padding: 25px 0px;
+}
+
+.menu ul {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+}
+
+.menu ul li a {
+    color: #FFF;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 12px;
+    font-weight: 700;
+    font-size: 15px;
+    transition: .2s ease;
+}
+
+.menu ul li:hover a {
+    background: #FFF;
+    color: #333;
+}
+
+.menu ul li a.active {
+    background: #FFF;
+    color: #333;
+}

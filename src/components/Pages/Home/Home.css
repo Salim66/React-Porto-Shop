@@ -1,0 +1,82 @@
+.carousel-slider img {
+    width: 100%;
+    height: 85vh;
+    object-fit: cover;
+}
+
+.carousel-slider h3 {
+    font-weight: 900;
+    font-size: 60px;
+}
+
+.carousel-slider p {
+    font-weight: 200px;
+    font-size: 18px;
+    width: 70%;
+    margin: auto;
+}
+
+.services {
+    padding-top: 60px;
+    padding-bottom: 30px;
+}
+
+.services img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin-top: -50px;
+    line-height: 160px;
+}
+
+.services h3 {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.services p {
+    font-weight: 200;
+    font-size: 14px;
+}
+
+.our-team {
+    padding: 80px;
+    background: #f9f9f9;
+}
+
+.our-team__image {
+    display: flex;
+    gap: 10px;
+    width: 260px;
+    height: 260px;
+}
+
+.our-team__info h3 {
+    font-weight: 900;
+    font-size: 30px;
+}
+
+.our-team__info h3 span {
+    font-weight: 400;
+    color: #777;
+}
+
+.desc-one {
+    font-weight: 700;
+    color: #999;
+    font-size: 20px;
+}
+
+.desc-two {
+    color: #999;
+}
+
+.our-team__info button {
+    background: #333;
+    padding: 10px 20px;
+    transition: .2s;
+}
+
+.our-team__info button:hover {
+    background: #555;
+}

@@ -1,0 +1,53 @@
+.shop-widget {
+    margin-bottom: 20px;
+}
+
+.shop-widget__title {
+    font-weight: 400;
+    font-size: 24px;
+    color: #333;
+}
+
+.shop-widget input[type=text] {
+    width: 100%;
+    padding: 5px 10px;
+    border: 1px solid #333;
+    border-radius: 4px;
+}
+
+.widget-list.checklist {
+    padding-left: 15px;
+}
+
+.widget-list.checklist input[type=checkbox],
+.widget-list.checklist label {
+    font-size: 14px;
+    font-weight: 400;
+    margin-right: 10px;
+}
+
+.widget-list.taglist {
+    padding-left: 0px;
+}
+
+.widget-list.taglist li {
+    display: inline-block;
+    margin: 7px 3px;
+}
+
+
+.widget-list.taglist li a {
+    text-decoration: none;
+    display: block;
+    background: #333;
+    padding: 5px 10px;
+    color: #FFF;
+    border: 1px solid #333;
+    border-radius: 4px;
+    transition: .2s;
+}
+
+.widget-list.taglist li:hover a {
+    background: transparent;
+    color: #333;
+}
