@@ -6,18 +6,23 @@ import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import ShopSidebar from '../../Sidebar/ShopSidebar/ShopSidebar';
 import './Shop.css';
 import { Link } from 'react-router-dom';
+import Skeleton from 'react-loading-skeleton';
 
 const Shop = () => {
 
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        
-        fetch('http://localhost:5050/products')
-        .then(data => data.json())
-        .then(data => setProducts(data));
 
-    }, [])
+        setInterval(() => {
+       
+            fetch('http://localhost:5050/products')
+            .then(data => data.json())
+            .then(data => setProducts(data));
+
+        }, 2000);        
+
+    }, [])   
     
     return (
         <>
@@ -31,6 +36,8 @@ const Shop = () => {
                         <Col md={9}>
                             <Row>
                                 {
+                                    products.length > 0 ? 
+
                                     products.map(data => 
                                         <Col md={3}>
                                             <div className="product-item">
@@ -47,8 +54,17 @@ const Shop = () => {
                                                                     <li><FontAwesomeIcon icon={ faStar }></FontAwesomeIcon></li>
                                                                     <li><FontAwesomeIcon icon={ faStar }></FontAwesomeIcon></li>
                                                                 </ul>
-                                                                <span className='regular'>$200</span>
-                                                                <span className='sale'>$120</span>         
+                                                                
+                                                                {
+                                                                    data.sell_price == "" ?
+                                                                        <span className='sale'>${data.price}</span>
+                                                                    :
+                                                                    <>
+                                                                        <span className='regular'>${data.price}</span>
+                                                                        <span className='sale'>${data.sell_price}</span> 
+                                                                    </>
+                                                                }
+        
                                                             </Card.Text>
                                                         </Card.Body>
                                                     </Card>
@@ -56,6 +72,138 @@ const Shop = () => {
                                             </div>
                                         </Col>
                                     )
+                                    :
+                                    <>
+                                        <Col md={3}>
+                                            <div className="product-item">
+                                                <a href='#'>
+                                                    <Card className="card-main text-center">
+                                                        <Skeleton width="165px" height="150px" className='skeleton-product__img' />
+                                                        <Card.Body>
+                                                            <Skeleton width="100px" height="20px" className='skeleton-product__name' />
+                                                            <Card.Text>
+                                                                <Skeleton width="120px" height="20px" className='skeleton-product__star' />
+                                                                <Skeleton width="130px" height="22px" className='skeleton-product__price' />
+                                                            </Card.Text>
+                                                        </Card.Body>
+                                                    </Card>
+                                                </a>
+                                            </div>
+                                        </Col>                                    
+                                        <Col md={3}>
+                                            <div className="product-item">
+                                                <a href='#'>
+                                                    <Card className="card-main text-center">
+                                                        <Skeleton width="165px" height="150px" className='skeleton-product__img' />
+                                                        <Card.Body>
+                                                            <Skeleton width="100px" height="20px" className='skeleton-product__name' />
+                                                            <Card.Text>
+                                                                <Skeleton width="120px" height="20px" className='skeleton-product__star' />
+                                                                <Skeleton width="130px" height="22px" className='skeleton-product__price' />
+                                                            </Card.Text>
+                                                        </Card.Body>
+                                                    </Card>
+                                                </a>
+                                            </div>
+                                        </Col>                                    
+                                        <Col md={3}>
+                                            <div className="product-item">
+                                                <a href='#'>
+                                                    <Card className="card-main text-center">
+                                                        <Skeleton width="165px" height="150px" className='skeleton-product__img' />
+                                                        <Card.Body>
+                                                            <Skeleton width="100px" height="20px" className='skeleton-product__name' />
+                                                            <Card.Text>
+                                                                <Skeleton width="120px" height="20px" className='skeleton-product__star' />
+                                                                <Skeleton width="130px" height="22px" className='skeleton-product__price' />
+                                                            </Card.Text>
+                                                        </Card.Body>
+                                                    </Card>
+                                                </a>
+                                            </div>
+                                        </Col>                                    
+                                        <Col md={3}>
+                                            <div className="product-item">
+                                                <a href='#'>
+                                                    <Card className="card-main text-center">
+                                                        <Skeleton width="165px" height="150px" className='skeleton-product__img' />
+                                                        <Card.Body>
+                                                            <Skeleton width="100px" height="20px" className='skeleton-product__name' />
+                                                            <Card.Text>
+                                                                <Skeleton width="120px" height="20px" className='skeleton-product__star' />
+                                                                <Skeleton width="130px" height="22px" className='skeleton-product__price' />
+                                                            </Card.Text>
+                                                        </Card.Body>
+                                                    </Card>
+                                                </a>
+                                            </div>
+                                        </Col>                                    
+                                        <Col md={3}>
+                                            <div className="product-item">
+                                                <a href='#'>
+                                                    <Card className="card-main text-center">
+                                                        <Skeleton width="165px" height="150px" className='skeleton-product__img' />
+                                                        <Card.Body>
+                                                            <Skeleton width="100px" height="20px" className='skeleton-product__name' />
+                                                            <Card.Text>
+                                                                <Skeleton width="120px" height="20px" className='skeleton-product__star' />
+                                                                <Skeleton width="130px" height="22px" className='skeleton-product__price' />
+                                                            </Card.Text>
+                                                        </Card.Body>
+                                                    </Card>
+                                                </a>
+                                            </div>
+                                        </Col>                                    
+                                        <Col md={3}>
+                                            <div className="product-item">
+                                                <a href='#'>
+                                                    <Card className="card-main text-center">
+                                                        <Skeleton width="165px" height="150px" className='skeleton-product__img' />
+                                                        <Card.Body>
+                                                            <Skeleton width="100px" height="20px" className='skeleton-product__name' />
+                                                            <Card.Text>
+                                                                <Skeleton width="120px" height="20px" className='skeleton-product__star' />
+                                                                <Skeleton width="130px" height="22px" className='skeleton-product__price' />
+                                                            </Card.Text>
+                                                        </Card.Body>
+                                                    </Card>
+                                                </a>
+                                            </div>
+                                        </Col>                                    
+                                        <Col md={3}>
+                                            <div className="product-item">
+                                                <a href='#'>
+                                                    <Card className="card-main text-center">
+                                                        <Skeleton width="165px" height="150px" className='skeleton-product__img' />
+                                                        <Card.Body>
+                                                            <Skeleton width="100px" height="20px" className='skeleton-product__name' />
+                                                            <Card.Text>
+                                                                <Skeleton width="120px" height="20px" className='skeleton-product__star' />
+                                                                <Skeleton width="130px" height="22px" className='skeleton-product__price' />
+                                                            </Card.Text>
+                                                        </Card.Body>
+                                                    </Card>
+                                                </a>
+                                            </div>
+                                        </Col>                                    
+                                        <Col md={3}>
+                                            <div className="product-item">
+                                                <a href='#'>
+                                                    <Card className="card-main text-center">
+                                                        <Skeleton width="165px" height="150px" className='skeleton-product__img' />
+                                                        <Card.Body>
+                                                            <Skeleton width="100px" height="20px" className='skeleton-product__name' />
+                                                            <Card.Text>
+                                                                <Skeleton width="120px" height="20px" className='skeleton-product__star' />
+                                                                <Skeleton width="130px" height="22px" className='skeleton-product__price' />
+                                                            </Card.Text>
+                                                        </Card.Body>
+                                                    </Card>
+                                                </a>
+                                            </div>
+                                        </Col>                                    
+                                    </>
+
                                 }
                                 
        

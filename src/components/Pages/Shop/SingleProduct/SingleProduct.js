@@ -73,8 +73,17 @@ const SingleProduct = () => {
                                 <p>( There are no reviews yet. )</p>
                             </ul>
                             <div className="pricing">
-                                <span className="regular">${ single.price }</span>
-                                <span className="sale">${ single.sell_price }</span>
+
+                                    {
+                                        single.sell_price == "" ?
+                                        <span className="sale">${ single.price }</span>
+                                        :
+                                        <>
+                                            <span className="regular">${ single.price }</span>
+                                            <span className="sale">${ single.sell_price }</span>
+                                        </>
+                                    }
+
                             </div>
                             <div className="desc">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Est voluptatem vero ex odit iste voluptatum repellat. Sapiente quis reiciendis consectetur.
@@ -103,6 +112,7 @@ const SingleProduct = () => {
 
                                     related.map(data => 
                                       
+                                        data.id !== single.id ?
                                         <Col md={3}>
                                             <div className="product-item">
                                                 <Link to={ data.id }>
@@ -126,6 +136,9 @@ const SingleProduct = () => {
                                                 </Link>
                                             </div>
                                         </Col>
+                                        :
+                                        <></>
+                                        
                                       
                                     )
                                 }

@@ -1,7 +1,7 @@
 .contact-header img {
     display: block;
     width: 100%;
-    height: 60vh;
+    height: 35vh;
     object-fit: cover;
     position: relative;
 }
@@ -9,7 +9,7 @@
 .contact-info {
     width: 100%;
     position: absolute;
-    top: 400px;
+    top: 335px;
     left: 0px;
     display: block;
 }

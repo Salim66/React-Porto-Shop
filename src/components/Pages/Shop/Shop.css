@@ -76,3 +76,20 @@
     margin-bottom: 3px;
     font-size: 14px;
 }
+
+.skeleton-product__img {
+    margin-left: 4.5px !important;
+    margin-top: 10px !important;
+}
+
+.skeleton-product__name {
+    margin-left: -56px !important;
+}
+
+.skeleton-product__star {
+    margin-left: -36px !important;
+}
+
+.skeleton-product__price {
+    margin-left: -26px !important;
+}
