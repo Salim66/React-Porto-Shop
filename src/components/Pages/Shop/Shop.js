@@ -2,27 +2,43 @@ import React, { useState, useEffect } from 'react';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { Button, Card, Col, Container, Pagination, Row } from 'react-bootstrap';
 import ShopSidebar from '../../Sidebar/ShopSidebar/ShopSidebar';
 import './Shop.css';
 import { Link } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
+import ReactPaginate from 'react-paginate';
 
 const Shop = () => {
 
     const [products, setProducts] = useState([]);
+    const [page, setPage] = useState([]);
 
     useEffect(() => {
 
         setInterval(() => {
        
-            fetch('http://localhost:5050/products')
-            .then(data => data.json())
+            fetch('http://localhost:5050/products?_page=1&_limit=8')
+            .then(data => {
+                
+                let total_product = data.headers.get('x-total-count');
+                setPage(total_product / 8);
+
+                return data.json();
+            })
             .then(data => setProducts(data));
 
         }, 2000);        
 
-    }, [])   
+    }, []) 
+    
+    function updateProduct(current_page){
+        let page = current_page.selected + 1;
+        
+        fetch('http://localhost:5050/products?_page='+ page +'&_limit=8')
+        .then(data => data.json())
+        .then(data => setProducts(data));
+    }
     
     return (
         <>
@@ -210,6 +226,27 @@ const Shop = () => {
                   
                             </Row>
                         </Col>
+                    </Row>
+                    <Row>
+                        
+                       <ReactPaginate
+                            pageCount={ page }
+                            containerClassName={ 'pagination justify-content-center py-4' }
+                            pageClassName={ 'page-item' }
+                            pageLinkClassName={ 'page-link' }
+                            previousClassName={ 'page-item' }
+                            previousLinkClassName={ 'page-link' }
+                            nextClassName={ 'page-item' }
+                            nextLinkClassName={ 'page-link' }
+                            previousLabel={ ' << ' }
+                            nextLabel={ ' >> ' }
+                            breakLabel={ ' . . . ' }
+                            breakClassName={ 'page-item' }
+                            breakLinkClassName={ 'page-link' }
+                            activeClassName={ 'active' }
+                            onPageChange={ updateProduct }
+                       />
+
                     </Row>
                 </Container>
             </section>
