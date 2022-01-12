@@ -67,6 +67,7 @@ const Header = ({progress}) => {
                                     <li><NavLink onClick={() => progress(100)} to="/team">Out Team</NavLink></li>
                                     <li><NavLink onClick={() => progress(100)} to="/shop">Shop</NavLink></li>
                                     <li><NavLink onClick={() => progress(100)} to="/contact">Contact Us</NavLink></li>
+                                    <li><NavLink onClick={() => progress(100)} to="/dashboard">Dashboard</NavLink></li>
                                 </ul>
                             </div>
                         </Col>

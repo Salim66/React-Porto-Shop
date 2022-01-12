@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LoadingBar from "react-top-loading-bar";
+import Admin from './components/Admin/Admin';
+import ChangePassword from './components/Admin/ChangePassword/ChangePassword';
+import Dashboard from './components/Admin/Dashboard/Dashboard';
+import Profile from './components/Admin/Profile/Profile';
+import Staff from './components/Admin/Staff/Staff';
+import Student from './components/Admin/Student/Student';
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import About from "./components/Pages/About/About";
@@ -41,6 +47,15 @@ function App() {
           <Route path="/shop/:productId" element={ <SingleProduct></SingleProduct> } />
           <Route path="/contact" element={ <Contact></Contact> } />
           <Route path="/team" element={ <Team></Team> } />
+
+          <Route path="/dashboard" element={ <Admin></Admin> }>
+            <Route path="/dashboard" element={ <Dashboard></Dashboard> } />
+            <Route path="/dashboard/profile" element={ <Profile></Profile> } />
+            <Route path="/dashboard/password-change" element={ <ChangePassword></ChangePassword> } />
+            <Route path="/dashboard/student" element={ <Student></Student> } />
+            <Route path="/dashboard/staff" element={ <Staff></Staff> } />
+          </Route>
+
           <Route path="/*" element={ <NotFound></NotFound> } />
         
         </Routes>
