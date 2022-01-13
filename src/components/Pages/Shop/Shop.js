@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { Button, Card, Col, Container, Pagination, Row } from 'react-bootstrap';
+import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import ShopSidebar from '../../Sidebar/ShopSidebar/ShopSidebar';
 import './Shop.css';
 import { Link } from 'react-router-dom';
@@ -12,7 +12,7 @@ import ReactPaginate from 'react-paginate';
 const Shop = () => {
 
     const [products, setProducts] = useState([]);
-    const [page, setPage] = useState([]);
+    const [page, setPage] = useState(0);
 
     useEffect(() => {
 
