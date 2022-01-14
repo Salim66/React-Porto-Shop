@@ -44,7 +44,7 @@ function App() {
           <Route path="/" element={ <Home></Home> } />
           <Route path="/about" element={ <About></About> } />
           <Route path="/blog" element={ <Blog></Blog> } />
-          <Route path="/blog/single" element={ <SingleBlog></SingleBlog> } />
+          <Route path="/blog/:blogId" element={ <SingleBlog></SingleBlog> } />
           <Route path="/shop" element={ <Shop></Shop> } />
           <Route path="/shop/:productId" element={ <SingleProduct></SingleProduct> } />
           <Route path="/contact" element={ <Contact></Contact> } />

@@ -28,7 +28,7 @@ const Shop = () => {
             })
             .then(data => setProducts(data));
 
-        }, 2000);        
+        }, 3000);        
 
     }, []) 
     
