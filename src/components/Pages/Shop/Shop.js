@@ -16,9 +16,7 @@ const Shop = () => {
 
     useEffect(() => {
 
-        setInterval(() => {
-       
-            fetch('http://localhost:5050/products?_page=1&_limit=8')
+        fetch('http://localhost:5050/products?_page=1&_limit=8')
             .then(data => {
                 
                 let total_product = data.headers.get('x-total-count');
@@ -26,9 +24,7 @@ const Shop = () => {
 
                 return data.json();
             })
-            .then(data => setProducts(data));
-
-        }, 3000);        
+            .then(data => setProducts(data));    
 
     }, []) 
     
@@ -47,7 +43,7 @@ const Shop = () => {
                 <Container>
                     <Row>
                         <Col md={3}>
-                            <ShopSidebar></ShopSidebar>
+                            <ShopSidebar products={ setProducts }></ShopSidebar>
                         </Col>
                         <Col md={9}>
                             <Row>
@@ -59,7 +55,7 @@ const Shop = () => {
                                             <div className="product-item">
                                                 <Link to={ data.id }>
                                                     <Card className="card-main">
-                                                        <Card.Img className="product-image" src={ data.image }></Card.Img>
+                                                        <Card.Img className="product-image" src={ data.photo }></Card.Img>
                                                         <Card.Body>
                                                             <Card.Title className="product-name">{ data.name }</Card.Title>
                                                             <Card.Text>
@@ -77,7 +73,7 @@ const Shop = () => {
                                                                     :
                                                                     <>
                                                                         <span className='regular'>${data.price}</span>
-                                                                        <span className='sale'>${data.sell_price}</span> 
+                                                                        <span className='sale'>${data.sprice}</span> 
                                                                     </>
                                                                 }
         

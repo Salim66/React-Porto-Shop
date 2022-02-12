@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LoadingBar from "react-top-loading-bar";
 import Admin from './components/Admin/Admin';
+import Brand from './components/Admin/Brand/Brand';
+import Category from './components/Admin/Category/Category';
 import ChangePassword from './components/Admin/ChangePassword/ChangePassword';
 import Dashboard from './components/Admin/Dashboard/Dashboard';
+import Product from './components/Admin/Product/Product';
 import Profile from './components/Admin/Profile/Profile';
 import Staff from './components/Admin/Staff/Staff';
 import Student from './components/Admin/Student/Student';
@@ -18,6 +21,7 @@ import NotFound from "./components/Pages/NotFound/NotFound";
 import Shop from "./components/Pages/Shop/Shop";
 import SingleProduct from "./components/Pages/Shop/SingleProduct/SingleProduct";
 import Team from "./components/Pages/Team/Team";
+import Tag from './components/Tag/Tag';
 
 
 function App() {
@@ -52,6 +56,10 @@ function App() {
 
           <Route path="/dashboard" element={ <Admin></Admin> }>
             <Route path="/dashboard" element={ <Dashboard></Dashboard> } />
+            <Route path="/dashboard/product" element={ <Product></Product> } />
+            <Route path="/dashboard/category" element={ <Category></Category> } />
+            <Route path="/dashboard/brand" element={ <Brand></Brand> } />
+            <Route path="/dashboard/tag" element={ <Tag></Tag> } />
             <Route path="/dashboard/profile" element={ <Profile></Profile> } />
             <Route path="/dashboard/password-change" element={ <ChangePassword></ChangePassword> } />
             <Route path="/dashboard/student" element={ <Student></Student> } />

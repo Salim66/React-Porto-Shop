@@ -33,6 +33,10 @@ const Admin = () => {
                                                 <img src="https://www.portotheme.com/wordpress/porto/corporate3/wp-content/themes/porto/images/logo/logo.png" alt="" />
                                                 <ul className='list-group'>
                                                     <li className='list-group-item'><Link to="/dashboard">Dashboard</Link></li>
+                                                    <li className='list-group-item'><Link to="/dashboard/product">Products</Link></li>
+                                                    <li className='list-group-item'><Link to="/dashboard/category">Category</Link></li>
+                                                    <li className='list-group-item'><Link to="/dashboard/brand">Brand</Link></li>
+                                                    <li className='list-group-item'><Link to="/dashboard/Tag">Tag</Link></li>
                                                     <li className='list-group-item'><Link to="/dashboard/profile">Profile</Link></li>
                                                     <li className='list-group-item'><Link to="/dashboard/password-change">Password Change</Link></li>
                                                     <li className='list-group-item'><Link to="/dashboard/student">Student</Link></li>

@@ -1,22 +1,35 @@
 import React from 'react';
 import './ShopSidebar.css';
 
-const ShopSidebar = () => {
+const ShopSidebar = (props) => {
+
+    let handleSearchForm = (e) => {
+        fetch('http://localhost:5050/products?q='+ e.target.value)
+        .then(data => data.json())
+        .then(data => props.products(data));
+    }
+
+    let handleSearchCategory = (catId) => {
+        fetch('http://localhost:5050/category/'+catId+'/products')
+        .then(data => data.json())
+        .then(data => props.products(data));
+    }
+
     return (
         <>
             <div className="shop-widget">
                 <h3 className="shop-widget__title">Search Products</h3>
-                <input type="text" />
+                <input type="text" onChange={ handleSearchForm } />
             </div>
             <div className="shop-widget">
                 <h3 className="shop-widget__title">Categories</h3>
                 
                 <ul className='widget-list checklist'>
-                    <li><input type="checkbox" id="Man" /><label htmlFor="Man">Man</label></li>
-                    <li><input type="checkbox" id="Women" /><label htmlFor="Women">Women</label></li>
-                    <li><input type="checkbox" id="Baby" /><label htmlFor="Baby">Baby</label></li>
-                    <li><input type="checkbox" id="Electronic" /><label htmlFor="Electronic">Electronic</label></li>
-                    <li><input type="checkbox" id="Ciramic" /><label htmlFor="Ciramic">Ciramic</label></li>
+                    <li><input type="checkbox" onChange={() => handleSearchCategory(1) } id="Man" /><label htmlFor="Man">Man</label></li>
+                    <li><input type="checkbox" onChange={() => handleSearchCategory(2) } id="Women" /><label htmlFor="Women">Women</label></li>
+                    <li><input type="checkbox" onChange={() => handleSearchCategory(3) } id="Baby" /><label htmlFor="Baby">Baby</label></li>
+                    <li><input type="checkbox" onChange={() => handleSearchCategory(4) } id="Electronic" /><label htmlFor="Electronic">Electronic</label></li>
+                    <li><input type="checkbox" onChange={() => handleSearchCategory(5) } id="Ciramic" /><label htmlFor="Ciramic">Ciramic</label></li>
                 </ul>
             </div>
             <div className="shop-widget">
